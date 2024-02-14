@@ -39,8 +39,7 @@
 
         .number {
             font-size: 2em; /* Rozmiar czcionki */
-            margin: 0 30px; /* Marginesy między napisami */
-            cursor: pointer; /* Zmiana kursora na wskazujący na napisie */
+            margin: 0 35px; /* Marginesy między napisami */
         }
     </style>
 </head>
@@ -57,27 +56,12 @@
     </div>
 
     <div class="number-container">
-        <div class="number" onclick="subtractPoints()">9999</div>
-        <div class="number" id="pointsDisplay">9999</div>
+        <div class="number">9999</div>
+        <div class="number">9999</div>
         <div class="number">9999</div>
         <div class="number">9999</div>
         <div class="number">9999</div>
     </div>
-
-    <script>
-        var points = 10000; // Początkowa liczba punktów
-
-        function subtractPoints() {
-            points -= 9999; // Odejmujemy 9999 punktów po kliknięciu
-            document.getElementById("pointsDisplay").innerHTML = points; // Aktualizujemy liczbę punktów na stronie
-
-            if (points <= 1) {
-                setTimeout(function() {
-                    window.location.href = "strona_z_obrazkiem.html"; // Przekierowanie na stronę z obrazkiem po 5 sekundach
-                }, 5000); // 5000 milisekund = 5 sekund
-            }
-        }
-    </script>
 
 </body>
 </html>
