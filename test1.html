@@ -14,6 +14,27 @@
             height: 100vh; /* Wysokość strony na cały widok */
         }
 
+        /* Dodanie falowanych linii po bokach */
+        body::before,
+        body::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            border: 2px solid white; /* Białe linie */
+            border-radius: 20px; /* Zaokrąglenie krawędzi */
+            z-index: -1; /* Ustawienie warstwy pod tekstem */
+        }
+
+        body::before {
+            left: 20px; /* Odległość od lewej krawędzi */
+        }
+
+        body::after {
+            right: 20px; /* Odległość od prawej krawędzi */
+        }
+
         h1 {
             text-align: center; /* Wypośrodkowanie tekstu */
         }
