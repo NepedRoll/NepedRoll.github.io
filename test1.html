@@ -1,14 +1,43 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Strona test1</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: yellow; /* Żółte tło */
+            margin: 0; /* Usunięcie marginesów */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh; /* Wysokość strony na cały widok */
+        }
+
+        h1 {
+            text-align: center; /* Wypośrodkowanie tekstu */
+        }
+
+        .clip-container {
+            margin-top: 20px; /* Odstęp od nagłówka */
+        }
+
+        video {
+            width: 400px; /* Szerokość klipu */
+            height: auto; /* Dostosowanie wysokości proporcjonalnie */
+        }
+    </style>
 </head>
 <body>
 
-    <h1>Witaj na stronie test1!</h1>
-    <!-- Tutaj dodaj inne elementy HTML, jeśli są potrzebne -->
+    <h1>Prezentacja</h1>
+
+    <div class="clip-container">
+        <video autoplay loop>
+            <source src="scorp.mp4" type="video/mp4"> <!-- Ścieżka do pliku klipu -->
+            Twoja przeglądarka nie obsługuje elementu video.
+        </video>
+    </div>
 
 </body>
 </html>
