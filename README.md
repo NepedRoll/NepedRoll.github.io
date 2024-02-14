@@ -1,67 +1,29 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Strona z klikalnymi obrazkami</title>
+    <title>Strona</title>
     <style>
         body {
-            background-color: yellow; /* Żółte tło */
+            background-color: yellow; /* żółte tło */
             margin: 0; /* Usunięcie marginesów */
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            justify-content: center; /* Wyśrodkowanie zawartości na środku poziomo */
+            align-items: center; /* Wyśrodkowanie zawartości na środku pionowo */
             height: 100vh; /* Wysokość strony na cały widok */
         }
 
         h1 {
-            color: red; /* Czerwony kolor tekstu */
-            font-size: 3em;
-            animation: bounce 2s infinite alternate; /* Animacja */
-        }
-
-        .image-container {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px; /* Odstęp od napisu */
-        }
-
-        .image-container img {
-            width: 100px; /* Szerokość obrazu */
-            height: auto; /* Dostosowanie wysokości proporcjonalnie */
-            margin: 0 15px; /* Marginesy między obrazami */
-        }
-
-        .number-container {
-            display: flex;
-            justify-content: center;
-            margin-top: 30px; /* Odstęp od obrazów */
-        }
-
-        .number {
-            font-size: 2em; /* Rozmiar czcionki */
-            margin: 0 35px; /* Marginesy między napisami */
+            text-align: center; /* Wypośrodkowanie tekstu */
+            cursor: pointer; /* Zmiana kursora na wskazujący */
+            padding: 20px; /* Dodanie odstępu wokół napisu */
         }
     </style>
 </head>
 <body>
 
-    <center><h1>Crossout Market</h1></center>
-
-    <div class="image-container">
-        <a href="test1.html"><img src="1.png" alt="Opis zdjęcia 1"></a>
-        <a href="test2.html"><img src="2.png" alt="Opis zdjęcia 2"></a>
-        <a href="test3.html"><img src="3.png" alt="Opis zdjęcia 3"></a>
-        <a href="test4.html"><img src="4.png" alt="Opis zdjęcia 4"></a>
-        <a href="test5.html"><img src="5.png" alt="Opis zdjęcia 5"></a>
-    </div>
-
-    <div class="number-container">
-        <div class="number">9999</div>
-        <div class="number">9999</div>
-        <div class="number">9999</div>
-        <div class="number">9999</div>
-        <div class="number">9999</div>
-    </div>
+    <h1 onclick="window.location.href = 'test.html';">Strona</h1>
 
 </body>
 </html>
