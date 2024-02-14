@@ -40,7 +40,7 @@
 
         .number {
             font-size: 2em; /* Rozmiar czcionki */
-            margin: 0 10px; /* Marginesy między napisami */
+            margin: 0 40px; /* Marginesy między napisami */
         }
     </style>
 </head>
