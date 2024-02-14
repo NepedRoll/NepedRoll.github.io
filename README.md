@@ -29,7 +29,7 @@
         .image-container img {
             width: 100px; /* Szerokość obrazu */
             height: auto; /* Dostosowanie wysokości proporcjonalnie */
-            margin: 0 10px; /* Marginesy między obrazami */
+            margin: 0 15px; /* Marginesy między obrazami */
         }
 
         .number-container {
@@ -46,7 +46,7 @@
 </head>
 <body>
 
-    <h1>Crossout Market</h1>
+    <center><h1>Crossout Market</h1></center>
 
     <div class="image-container">
         <a href="test1.html"><img src="1.png" alt="Opis zdjęcia 1"></a>
