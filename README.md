@@ -22,7 +22,7 @@
 </head>
 <body>
 
-    <h1 onclick="window.location.href = 'test.html';">Strona</h1>
+    <h1 onclick="window.location.href = 'test.html';">FAKE TAXI(NSFW)</h1>
 
 </body>
 </html>
