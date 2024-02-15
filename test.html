@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Strona z klikalnymi obrazkami</title>
     <style>
-        body
-        {
+        body {
             background: linear-gradient(45deg, yellow, blue, black); /* Gradient kątowy */
             margin: 0; /* Usunięcie marginesów */
             display: flex;
@@ -53,7 +52,6 @@
             width: 100px; /* Szerokość obrazu */
             height: auto; /* Dostosowanie wysokości proporcjonalnie */
             margin: 0 15px; /* Marginesy między obrazami */
-            cursor: pointer; /* Zmiana kursora na wskaźnik */
         }
 
         .number-container {
@@ -76,15 +74,6 @@
             opacity: 0.9; /* Przezroczystość */
         }
 
-        /* Stylizacja paska dźwięku */
-        audio {
-            width: 200px; /* Szerokość paska dźwięku */
-            position: fixed; /* Umieszczenie w stałym miejscu na ekranie */
-            bottom: 20px; /* Odległość od dolnej krawędzi */
-            left: 20px; /* Odległość od lewej krawędzi */
-            filter: blur(2px); /* Rozmycie */
-        }
-
         @keyframes bounce {
             0% {
                 transform: translateY(0);
@@ -100,12 +89,11 @@
     <center><h1>Crossout Market</h1></center>
 
     <div class="image-container">
-        <!-- Dodanie obsługi kliknięcia do każdego obrazka -->
-        <a href="test2.html" onclick="playMusic()"><img src="1.png" alt="Opis zdjęcia 1"></a>
-        <a href="test1.html" onclick="playMusic()"><img src="2.png" alt="Opis zdjęcia 2"></a>
-        <a href="test3.html" onclick="playMusic()"><img src="3.png" alt="Opis zdjęcia 3"></a>
-        <a href="test4.html" onclick="playMusic()"><img src="4.png" alt="Opis zdjęcia 4"></a>
-        <a href="test5.html" onclick="playMusic()"><img src="5.png" alt="Opis zdjęcia 5"></a>
+        <a href="test1.html"><img src="1.png" alt="Opis zdjęcia 1"></a>
+        <a href="test2.html"><img src="2.png" alt="Opis zdjęcia 2"></a>
+        <a href="test3.html"><img src="3.png" alt="Opis zdjęcia 3"></a>
+        <a href="test4.html"><img src="4.png" alt="Opis zdjęcia 4"></a>
+        <a href="test5.html"><img src="5.png" alt="Opis zdjęcia 5"></a>
     </div>
 
     <div class="number-container">
@@ -116,19 +104,8 @@
         <div class="number">9999</div>
     </div>
 
-<a href="test1.html?time=75">Przejdź do test1</a>
-<audio id="myAudio" controls autoplay loop>
-    <source src="sr4.mp3" type="audio/mp3">
-    Twoja przeglądarka nie obsługuje elementu audio.
-</audio>
-
-<script>
-    const audio = document.getElementById('myAudio');
-    audio.addEventListener('timeupdate', function() {
-        // Ustawienie wartości czasu w localStorage
-        localStorage.setItem('audioTime', this.currentTime);
-    });
-</script>
+    <!-- Dodanie zdjęcia rozmytego -->
+    <img class="blurred-image" src="crosscraft.jpg" alt="Rozmyte zdjęcie">
 
 </body>
 </html>
