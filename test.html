@@ -53,6 +53,7 @@
             width: 100px; /* Szerokość obrazu */
             height: auto; /* Dostosowanie wysokości proporcjonalnie */
             margin: 0 15px; /* Marginesy między obrazami */
+            cursor: pointer; /* Zmiana kursora na wskaźnik */
         }
 
         .number-container {
@@ -99,8 +100,9 @@
     <center><h1>Crossout Market</h1></center>
 
     <div class="image-container">
+        <!-- Dodanie obsługi kliknięcia do każdego obrazka -->
         <a href="test2.html"><img src="1.png" alt="Opis zdjęcia 1"></a>
-        <a href="test1.html"><img src="2.png" alt="Opis zdjęcia 2"></a>
+        <a href="test1.html" onclick="playMusic()"><img src="2.png" alt="Opis zdjęcia 2"></a>
         <a href="test3.html"><img src="3.png" alt="Opis zdjęcia 3"></a>
         <a href="test4.html"><img src="4.png" alt="Opis zdjęcia 4"></a>
         <a href="test5.html"><img src="5.png" alt="Opis zdjęcia 5"></a>
@@ -122,6 +124,14 @@
 
     <!-- Dodanie zdjęcia rozmytego -->
     <img class="blurred-image" src="crosscraft.jpg" alt="Rozmyte zdjęcie">
+
+    <!-- Skrypt JavaScript do uruchamiania muzyki -->
+    <script>
+        function playMusic() {
+            var audio = document.querySelector('audio');
+            audio.play();
+        }
+    </script>
 
 </body>
 </html>
