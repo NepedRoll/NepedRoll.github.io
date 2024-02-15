@@ -116,22 +116,19 @@
         <div class="number">9999</div>
     </div>
 
-    <!-- Element audio w sekcji body z automatycznym odtwarzaniem -->
-    <audio controls autoplay loop>
-        <source src="sr4.mp3" type="audio/mp3">
-        Twoja przeglądarka nie obsługuje elementu audio.
-    </audio>
+<a href="test1.html?time=75">Przejdź do test1</a>
+<audio id="myAudio" controls autoplay loop>
+    <source src="sr4.mp3" type="audio/mp3">
+    Twoja przeglądarka nie obsługuje elementu audio.
+</audio>
 
-    <!-- Dodanie zdjęcia rozmytego -->
-    <img class="blurred-image" src="crosscraft.jpg" alt="Rozmyte zdjęcie">
-
-    <!-- Skrypt JavaScript do uruchamiania muzyki -->
-    <script>
-        function playMusic() {
-            var audio = document.querySelector('audio');
-            audio.play();
-        }
-    </script>
+<script>
+    const audio = document.getElementById('myAudio');
+    audio.addEventListener('timeupdate', function() {
+        // Ustawienie wartości czasu w localStorage
+        localStorage.setItem('audioTime', this.currentTime);
+    });
+</script>
 
 </body>
 </html>
