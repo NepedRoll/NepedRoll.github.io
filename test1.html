@@ -93,6 +93,14 @@
             margin-top: 20px;
             text-align: center;
         }
+
+        /* Stylizacja odtwarzacza muzyki */
+        audio {
+            position: fixed;
+            bottom: 20px; /* Odległość od dolnej krawędzi */
+            left: 20px; /* Odległość od lewej krawędzi */
+            filter: blur(50%); /* Rozmycie */
+        }
     </style>
 </head>
 <body>
@@ -103,18 +111,18 @@
     <!-- Dodanie zdjęcia wyświetlającego pierwsze okienko -->
     <img class="popup-link" src="card.jpg" alt="Karta" onclick="togglePopup('popup1')">
 
-<!-- Pierwsze okienko -->
-<div class="popup" id="popup1">
-    <span class="popup-close" onclick="closePopups()">X</span>
-    <div class="popup-content">
-        <div class="popup-text" onclick="togglePopup('popup2')">$9999</div>
+    <!-- Pierwsze okienko -->
+    <div class="popup" id="popup1">
+        <span class="popup-close" onclick="closePopups()">X</span>
+        <div class="popup-content">
+            <div class="popup-text" onclick="togglePopup('popup2')">$9999</div>
+        </div>
     </div>
-</div>
 
     <!-- Drugie okienko -->
     <div class="popup" id="popup2">
         <span class="popup-close" onclick="closePopups()">X</span>
-        <div class="popup-text">CHUJA!</div>
+        <div class="popup-text">c</div>
     </div>
 
     <h1>игла/scorp</h1>
@@ -126,6 +134,16 @@
         </video>
     </div>
 
+    <!-- Element audio w sekcji body z automatycznym odtwarzaniem -->
+    <audio controls autoplay loop>
+        <source src="sr4.mp3" type="audio/mp3">
+        Twoja przeglądarka nie obsługuje elementu audio.
+    </audio>
+
+    <!-- Dodanie zdjęcia rozmytego -->
+    <img class="blurred-image" src="crosscraft.jpg" alt="Rozmyte zdjęcie">
+
+    <!-- Skrypt JavaScript do obsługi okienek modalnych -->
     <script>
         function togglePopup(id) {
             var popup = document.getElementById(id);
