@@ -75,6 +75,15 @@
             opacity: 0.9; /* Przezroczystość */
         }
 
+        /* Stylizacja paska dźwięku */
+        audio {
+            width: 200px; /* Szerokość paska dźwięku */
+            position: fixed; /* Umieszczenie w stałym miejscu na ekranie */
+            bottom: 20px; /* Odległość od dolnej krawędzi */
+            left: 20px; /* Odległość od lewej krawędzi */
+            filter: blur(2px); /* Rozmycie */
+        }
+
         @keyframes bounce {
             0% {
                 transform: translateY(0);
@@ -107,7 +116,7 @@
 
     <!-- Element audio w sekcji body -->
     <audio controls loop>
-        <source src="sr4.mp3" type="audio/mp3">
+        <source src="nazwa_pliku_audio.mp3" type="audio/mp3">
         Twoja przeglądarka nie obsługuje elementu audio.
     </audio>
 
