@@ -148,6 +148,15 @@
             const audio = document.getElementById('myAudio');
             audio.currentTime = storedTime;
         }
+
+        // Przekazanie czasu odtwarzania z powrotem do strony 1 po kliknięciu linka
+        const links = document.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('click', function() {
+                const audio = document.getElementById('myAudio');
+                localStorage.setItem('audioTime', audio.currentTime);
+            });
+        });
     });
 </script>
 
