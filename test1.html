@@ -12,7 +12,7 @@
             flex-direction: column;
             align-items: center;
             height: 100vh; /* Wysokość strony na cały widok */
-        }
+       }
 
         /* Dodanie falowanych linii po bokach */
         body::before,
@@ -93,31 +93,23 @@
             margin-top: 20px;
             text-align: center;
         }
-
-        /* Stylizacja odtwarzacza muzyki */
-        audio {
-            position: fixed;
-            bottom: 20px; /* Odległość od dolnej krawędzi */
-            left: 20px; /* Odległość od lewej krawędzi */
-            filter: blur(50%); /* Rozmycie */
-        }
     </style>
 </head>
 <body>
 
     <!-- Dodanie zdjęcia przekierowującego -->
-    <a href="test.html" onclick="storeAudioTime()"><img class="arrow-link" src="arrow.png" alt="Strzałka"></a>
+    <a href="test.html"><img class="arrow-link" src="arrow.png" alt="Strzałka"></a>
 
     <!-- Dodanie zdjęcia wyświetlającego pierwsze okienko -->
     <img class="popup-link" src="card.jpg" alt="Karta" onclick="togglePopup('popup1')">
 
-    <!-- Pierwsze okienko -->
-    <div class="popup" id="popup1">
-        <span class="popup-close" onclick="closePopups()">X</span>
-        <div class="popup-content">
-            <div class="popup-text" onclick="togglePopup('popup2')">$9999</div>
-        </div>
+<!-- Pierwsze okienko -->
+<div class="popup" id="popup1">
+    <span class="popup-close" onclick="closePopups()">X</span>
+    <div class="popup-content">
+        <div class="popup-text" onclick="togglePopup('popup2')">$9999</div>
     </div>
+</div>
 
     <!-- Drugie okienko -->
     <div class="popup" id="popup2">
@@ -134,26 +126,7 @@
         </video>
     </div>
 
-    <audio id="myAudio" controls autoplay loop>
-        <source src="sr4.mp3" type="audio/mp3">
-        Twoja przeglądarka nie obsługuje elementu audio.
-    </audio>
-
     <script>
-        function storeAudioTime() {
-            const audio = document.getElementById('myAudio');
-            localStorage.setItem('audioTime', audio.currentTime);
-        }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const storedTime = localStorage.getItem('audioTime');
-            if (storedTime !== null) {
-                const audio = document.getElementById('myAudio');
-                audio.currentTime = storedTime;
-                audio.play(); // Dodane odtwarzanie po ustawieniu czasu
-            }
-        });
-
         function togglePopup(id) {
             var popup = document.getElementById(id);
             if (popup.style.display === 'none') {
@@ -173,4 +146,3 @@
 
 </body>
 </html>
-
