@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strona test2</title>
+    <style>
+        body {
+            background-color: yellow; /* Żółte tło */
+            margin: 0; /* Usunięcie marginesów */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh; /* Wysokość strony na cały widok */
+       }
+
+        /* Dodanie falowanych linii po bokach */
+        body::before,
+        body::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 4px; /* Grubość linii */
+            background-image: linear-gradient(to bottom, transparent 30%, white 50%, transparent 70%); /* Gradient falowania */
+            border-radius: 20px; /* Zaokrąglenie krawędzi */
+            z-index: -1; /* Ustawienie warstwy pod tekstem */
+        }
+
+        body::before {
+            left: 20px; /* Odległość od lewej krawędzi */
+        }
+
+        body::after {
+            right: 20px; /* Odległość od prawej krawędzi */
+        }
+
+        h1 {
+            text-align: center; /* Wypośrodkowanie tekstu */
+        }
+
+        .clip-container {
+            margin-top: 20px; /* Odstęp od nagłówka */
+        }
+
+        video {
+            width: 400px; /* Szerokość klipu */
+            height: auto; /* Dostosowanie wysokości proporcjonalnie */
+        }
+
+        /* Dodanie zdjęcia przekierowującego na stronę "test" */
+        .arrow-link {
+            position: absolute;
+            top: 20px; /* Odległość od górnej krawędzi */
+            left: 20px; /* Odległość od lewej krawędzi */
+            width: 50px; /* Szerokość obrazka */
+            height: auto; /* Dostosowanie wysokości proporcjonalnie */
+        }
+
+        /* Stylizacja okienka */
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border: 2px solid black;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+            display: none; /* Początkowo ukryte */
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            cursor: pointer; /* Zmiana kursora na wskaźnik */
+        }
+
+        .popup-text {
+            font-size: 24px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .popup-link {
+            position: absolute;
+            top: 20px; /* Odległość od górnej krawędzi */
+            right: 20px; /* Odległość od prawej krawędzi */
+            width: 50px; /* Szerokość obrazka */
+            height: auto; /* Dostosowanie wysokości proporcjonalnie */
+            cursor: pointer; /* Zmiana kursora na wskaźnik */
+        }
+
+        /* Dodanie stylu dla zablokowanego zdjęcia */
+        .blocked-card {
+            pointer-events: none; /* Zablokowanie zdarzeń myszy */
+        }
+    </style>
+</head>
+<body>
+
+ <!-- Dodanie zdjęcia przekierowującego -->
+    <a href="test.html"><img class="arrow-link" src="arrow.png" alt="Strzałka"></a>
+
+    <!-- Dodanie zdjęcia wyświetlającego pierwsze okienko -->
+    <img class="popup-link" src="card.jpg" alt="Karta" onclick="togglePopup('popup1')">
+
+    <!-- Pierwsze okienko -->
+    <div class="popup" id="popup1">
+        <span class="popup-close" onclick="closePopups()">X</span>
+        <div class="popup-content">
+            <div class="popup-text" onclick="togglePopup('popup2')" style="cursor: help;">$9999</div>
+        </div>
+    </div>
+
+    <!-- Drugie okienko -->
+    <div class="popup" id="popup2">
+        <span class="popup-close" onclick="closePopups()">X</span>
+        <div class="popup-text">-9999$</div>
+    </div>
+
+    <h1>бочка/porcupine</h1>
+
+    <div class="clip-container">
+        <video autoplay loop>
+            <source src="porka.mp4" type="video/mp4">
+            Twoja przeglądarka nie obsługuje elementu video.
+        </video>
+    </div>
+
+    <script>
+        var cardBlocked = false;
+
+        function togglePopup(id) {
+            var popup = document.getElementById(id);
+            if (popup.style.display === 'none') {
+                popup.style.display = 'block';
+            } else {
+                popup.style.display = 'none';
+            }
+        }
+
+        function closePopups() {
+            var popups = document.getElementsByClassName('popup');
+            for (var i = 0; i < popups.length; i++) {
+                popups[i].style.display = 'none';
+            }
+            if (document.getElementById('popup2').style.display === 'block') {
+                document.querySelector('.popup-link').classList.add('blocked-card');
+                cardBlocked = true;
+            }
+        }
+
+        document.querySelector('.popup-link').addEventListener('click', function() {
+            if (cardBlocked) {
+                return false;
+            }
+        });
+    </script>
+
+</body>
+</html>
