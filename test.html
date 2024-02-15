@@ -6,7 +6,7 @@
     <title>Strona z klikalnymi obrazkami</title>
     <style>
         body {
-            background-color: yellow; /* Żółte tło */
+            background: linear-gradient(45deg, yellow, blue, black); /* Gradient kątowy */
             margin: 0; /* Usunięcie marginesów */
             display: flex;
             flex-direction: column;
@@ -73,6 +73,15 @@
             filter: blur(1px); /* Efekt rozmycia */
             opacity: 0.9; /* Przezroczystość */
         }
+
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-20px);
+            }
+        }
     </style>
 </head>
 <body>
@@ -80,11 +89,11 @@
     <center><h1>Crossout Market</h1></center>
 
     <div class="image-container">
-        <a href="test2.html"><img src="1.png" alt="firebug"></a>
-        <a href="test1.html"><img src="2.png" alt="scorp"></a>
-        <a href="test3.html"><img src="3.png" alt="mastodon"></a>
-        <a href="test4.html"><img src="4.png" alt="porka"></a>
-        <a href="test5.html"><img src="5.png" alt="punisher"></a>
+        <a href="test1.html"><img src="1.png" alt="Opis zdjęcia 1"></a>
+        <a href="test2.html"><img src="2.png" alt="Opis zdjęcia 2"></a>
+        <a href="test3.html"><img src="3.png" alt="Opis zdjęcia 3"></a>
+        <a href="test4.html"><img src="4.png" alt="Opis zdjęcia 4"></a>
+        <a href="test5.html"><img src="5.png" alt="Opis zdjęcia 5"></a>
     </div>
 
     <div class="number-container">
