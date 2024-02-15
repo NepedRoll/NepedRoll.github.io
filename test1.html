@@ -141,29 +141,44 @@
     </audio>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Pobranie wartości czasu z localStorage
-        const storedTime = localStorage.getItem('audioTime');
-        if (storedTime !== null) {
-            // Ustawienie czasu odtwarzania muzyki
-            const audio = document.getElementById('myAudio');
-            audio.currentTime = storedTime;
-
-            // Wznowienie odtwarzania
-            audio.play();
+        // Funkcja do przełączania stanu okienek popup
+        function togglePopup(id) {
+            var popup = document.getElementById(id);
+            if (popup.style.display === 'none') {
+                popup.style.display = 'block';
+            } else {
+                popup.style.display = 'none';
+            }
         }
 
-        // Przekazanie czasu odtwarzania z powrotem do strony 1 po kliknięciu linka
-        const links = document.querySelectorAll('a');
-        links.forEach(link => {
-            link.addEventListener('click', function() {
+        // Funkcja do zamykania wszystkich okienek popup
+        function closePopups() {
+            var popups = document.getElementsByClassName('popup');
+            for (var i = 0; i < popups.length; i++) {
+                popups[i].style.display = 'none';
+            }
+        }
+
+        // Po załadowaniu dokumentu
+        document.addEventListener('DOMContentLoaded', function() {
+            // Pobranie wartości czasu odtwarzania z localStorage
+            const storedTime = localStorage.getItem('audioTime');
+            if (storedTime !== null) {
+                // Ustawienie czasu odtwarzania muzyki
                 const audio = document.getElementById('myAudio');
-                localStorage.setItem('audioTime', audio.currentTime);
+                audio.currentTime = storedTime;
+            }
+
+            // Przekazanie czasu odtwarzania z powrotem do strony 1 po kliknięciu linka
+            const links = document.querySelectorAll('a');
+            links.forEach(link => {
+                link.addEventListener('click', function() {
+                    const audio = document.getElementById('myAudio');
+                    localStorage.setItem('audioTime', audio.currentTime);
+                });
             });
         });
-    });
-</script>
-
+    </script>
 </body>
 </html>
 
